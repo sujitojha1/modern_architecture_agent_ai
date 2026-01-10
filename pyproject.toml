@@ -1,0 +1,26 @@
+[project]
+name = "modern-architecture-agent-ai"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "browser-use>=0.11.2",
+    "faiss-cpu>=1.13.2",
+    "google-genai>=1.57.0",
+    "json-repair>=0.55.0",
+    "markitdown>=0.1.4",
+    "mcp>=1.25.0",
+    "networkx>=3.6.1",
+    "pillow>=12.1.0",
+    "playwright>=1.57.0",
+    "pymupdf4llm>=0.2.9",
+    "python-dotenv>=1.2.1",
+    "pyyaml>=6.0.3",
+    "readability-lxml>=0.8.4.1",
+    "requests>=2.32.5",
+    "rich>=14.2.0",
+    "tqdm>=4.67.1",
+    "trafilatura>=2.0.0",
+]
