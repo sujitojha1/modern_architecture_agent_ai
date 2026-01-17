@@ -1,7 +1,7 @@
 AGENT: PlannerAgent
 CONFIG: /Users/payalchakraborty/Dev/EAG2/modern_architecture_agent_ai/prompts/planner.md
 
-CURRENT_DATE: 2026-01-10
+CURRENT_DATE: 2026-01-17
 
 ################################################################################################
 
@@ -309,7 +309,7 @@ Return only the `plan_graph` and `next_step_id` as JSON.
 
 ```json
 {
-  "original_query": "uv add playwright",
+  "original_query": "find top hackernews",
   "planning_strategy": "conservative",
   "globals_schema": {},
   "file_manifest": [],

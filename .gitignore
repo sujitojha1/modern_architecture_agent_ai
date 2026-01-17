@@ -5,3 +5,4 @@ tools/__pycache__/*
 mcp_servers/tools/__pycache__/*
 memory/__pycache__/*
 ui/__pycache__/*
+.env
