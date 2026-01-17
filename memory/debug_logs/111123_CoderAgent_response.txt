@@ -1,0 +1,7 @@
+```json
+{
+  "code_variants": {
+    "CODE_1A": "import urllib.request\nimport json\n\ntop_stories_data_T002 = []\napi_base_url = \"https://hacker-news.firebaseio.com/v0/item/\"\n\n# Limit retrieval to the first 10 IDs\nfor story_id in top_story_ids_T001[:10]:\n    try:\n        url = f\"{api_base_url}{story_id}.json\"\n        with urllib.request.urlopen(url) as response:\n            data = json.loads(response.read().decode())\n            \n            story_info = {\n                'title': data.get('title'),\n                'url': data.get('url'),\n                'score': data.get('score')\n            }\n            # Only add if the story has a title, indicating it's a valid story item\n            if story_info['title']:\n                top_stories_data_T002.append(story_info)\n    except Exception as e:\n        # In case of any error (e.g., network, invalid JSON, missing ID)\n        # Print an error and continue to the next story\n        print(f\"Error fetching details for story ID {story_id}: {e}\")\n        continue\n\nreturn {\"top_stories_data_T002\": top_stories_data_T002}"
+  }
+}
+```

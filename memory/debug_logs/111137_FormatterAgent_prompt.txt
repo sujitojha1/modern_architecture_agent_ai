@@ -1,6 +1,3 @@
-AGENT: FormatterAgent
-CONFIG: /Users/payalchakraborty/Dev/EAG2/modern_architecture_agent_ai/prompts/formatter.md
-
 CURRENT_DATE: 2026-01-17
 
 # FormatterAgent Prompt

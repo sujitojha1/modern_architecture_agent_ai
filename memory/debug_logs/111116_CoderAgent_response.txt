@@ -1,0 +1,7 @@
+```json
+{
+  "code_variants": {
+    "CODE_1A": "import urllib.request\nimport json\n\nurl = \"https://hacker-news.firebaseio.com/v0/topstories.json\"\n\nwith urllib.request.urlopen(url) as response:\n    data = response.read().decode('utf-8')\n    top_story_ids_T001 = json.loads(data)\n\nreturn {'top_story_ids_T001': top_story_ids_T001}"
+  }
+}
+```

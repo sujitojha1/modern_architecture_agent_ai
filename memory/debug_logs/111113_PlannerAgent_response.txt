@@ -1,0 +1,47 @@
+```json
+{
+  "plan_graph": {
+    "nodes": [
+      {
+        "id": "T001",
+        "description": "Fetch the IDs of the current top stories from the Hacker News API.",
+        "agent": "CoderAgent",
+        "agent_prompt": "Write Python code to fetch the list of top story IDs from the Hacker News API (https://hacker-news.firebaseio.com/v0/topstories.json). Store the resulting list of story IDs in `top_story_ids_T001`.",
+        "reads": [],
+        "writes": ["top_story_ids_T001"]
+      },
+      {
+        "id": "T002",
+        "description": "Retrieve detailed information for each of the top Hacker News stories identified in T001.",
+        "agent": "CoderAgent",
+        "agent_prompt": "Write Python code that iterates through `top_story_ids_T001`. For each story ID, fetch its item details from the Hacker News API (https://hacker-news.firebaseio.com/v0/item/{id}.json). Collect the 'title', 'url', and 'score' for each story. Limit the retrieval to the first 10 IDs to focus on the immediate top stories. Store the list of dictionaries, where each dictionary represents a story with its details, in `top_stories_data_T002`.",
+        "reads": ["top_story_ids_T001"],
+        "writes": ["top_stories_data_T002"]
+      },
+      {
+        "id": "T003",
+        "description": "Format the extracted top Hacker News stories into a human-readable Markdown list.",
+        "agent": "FormatterAgent",
+        "agent_prompt": "Format the `top_stories_data_T002` into a clear and concise Markdown numbered list. Each list item should display the story's title in bold, followed by its score and URL. Ensure the output is well-structured and easy to read.",
+        "reads": ["top_stories_data_T002"],
+        "writes": ["formatted_hn_output_T003"]
+      }
+    ],
+    "edges": [
+      {
+        "source": "ROOT",
+        "target": "T001"
+      },
+      {
+        "source": "T001",
+        "target": "T002"
+      },
+      {
+        "source": "T002",
+        "target": "T003"
+      }
+    ]
+  },
+  "next_step_id": "T001"
+}
+```
